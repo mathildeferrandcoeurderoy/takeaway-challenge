@@ -1,7 +1,9 @@
+require 'menu'
+
 class Basket
 
   def initialize
-    @basket = { }
+    @basket = {}
 
   end
 
