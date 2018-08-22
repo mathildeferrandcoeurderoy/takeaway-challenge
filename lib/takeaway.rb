@@ -1,19 +1,17 @@
-require 'basket'
-require 'menu'
+require_relative 'basket'
+require_relative 'menu'
 
 class Takeaway
 
-  def initialize(menu_list)
+  attr_reader :menu_list
+
+  def initialize(menu_list = Menu.new)
     @menu_list = menu_list.price_list
 
   end
 
   def print_menu
     @menu_list
-  end
-
-  def add_to_basket
-
   end
 
 end
