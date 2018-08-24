@@ -13,9 +13,16 @@ class Basket
   end
 
   def sub_total
-    basket.map do |dish, quantity|
+    subtotal = basket.map do |dish, quantity|
       menu[dish] * quantity
     end.inject(:+)
+    "The subtotal of your order is £#{subtotal}."
+  end
+
+  def verification
+    puts "Do you want to checkout?"
+    input = gets.chomp
+    raise "Order not checked out" if input == "No"
   end
 
 end

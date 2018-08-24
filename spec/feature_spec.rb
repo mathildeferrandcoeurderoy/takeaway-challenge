@@ -22,7 +22,7 @@ describe 'Feature test' do
     it 'checks that the total matches the sum of the dishes in my order' do
       expect(basket.order("Tartare de thon", 1)).to eq('1 x Tartare de thon added to your basket')
       expect(basket.order("Brochettes de gambas", 2)).to eq('2 x Brochettes de gambas added to your basket')
-      expect(basket.sub_total).to eq(34)
+      expect(basket.sub_total).to eq("The subtotal of your order is £34.")
     end
   end
 end
