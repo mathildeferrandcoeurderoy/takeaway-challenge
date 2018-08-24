@@ -23,6 +23,7 @@ class Basket
     puts "Do you want to checkout?"
     input = gets.chomp
     raise "Order not checked out" if input == "No"
+    sms if input == "Yes"
   end
 
 end

@@ -23,7 +23,7 @@ describe Basket do
   describe '#verification' do
     it 'displays the subtotal to the user and asks to proceed or not' do
       allow(menu).to receive(:price_list).and_return({ 'Tartare de thon' => 10, 'Brochettes de gambas' => 12 })
-      allow(basket).to receive(:sub_total).and_return("The subtotal of your order is £#{10}.")
+      allow(basket).to receive(:sub_total).and_return("The subtotal of your order is £10.")
       expect(basket.verification)
     end
   end
