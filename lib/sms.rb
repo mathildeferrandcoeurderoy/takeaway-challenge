@@ -3,17 +3,18 @@ require 'dotenv/load'
 
 class SMS
 
-  def initialize
+  attr_reader :time
+
+  def initialize(time = Time.new + 3600)
     @client = Twilio::REST::Client.new(ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN'])
-    # from = ENV['FROM']
-    # to = ENV['TO']
+    @time = time
   end
 
   def send_sms
     @client.messages.create(
     from: ENV['FROM'],
     to: ENV['TO'],
-    body: "Thank you! Your order was placed and will be delivered before #{ }"
+    body: "Thank you! Your order was placed and will be delivered before #{ @time.strftime('%H:%M') }"
     )
   end
 

@@ -1,10 +1,13 @@
+require_relative 'sms'
+
 class Basket
 
-  attr_reader :basket, :total, :menu
+  attr_reader :basket, :total, :menu, :sms
 
-  def initialize(menu = Menu.new)
+  def initialize(menu = Menu.new, sms = SMS.new)
     @menu = menu.price_list
     @basket = {}
+    @sms = sms
   end
 
   def order(dish, quantity)
@@ -23,7 +26,7 @@ class Basket
     puts "Do you want to checkout?"
     input = gets.chomp
     raise "Order not checked out" if input == "No"
-    sms if input == "Yes"
+    sms.send_sms if input == "Yes"
   end
 
 end
