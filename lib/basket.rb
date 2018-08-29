@@ -1,3 +1,4 @@
+require_relative 'menu'
 require_relative 'sms'
 
 class Basket
@@ -5,7 +6,7 @@ class Basket
   attr_reader :basket, :total, :menu, :sms
 
   def initialize(menu = Menu.new, sms = SMS.new)
-    @menu = menu.price_list
+    @menu = menu.list
     @basket = {}
     @sms = sms
   end

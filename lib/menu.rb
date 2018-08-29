@@ -3,10 +3,6 @@ class Menu
   attr_reader :list
 
   def initialize
-    @list
-  end
-
-  def price_list
     @list = { 'Tartare de thon' => 10,
       'Brochettes de gambas' => 12,
       'Papillote de saumon' => 14,
